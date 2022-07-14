@@ -1,17 +1,17 @@
 import {Composition} from 'remotion';
-import {MyComposition} from './Composition';
+import {IGStory} from './IGStory';
 import './style.css';
 
 export const RemotionVideo: React.FC = () => {
 	return (
 		<>
 			<Composition
-				id="MyComp"
-				component={MyComposition}
-				durationInFrames={240}
+				id="IGStory"
+				component={IGStory}
+				durationInFrames={7 * 30}
 				fps={30}
-				width={1280}
-				height={720}
+				width={1080}
+				height={1920}
 			/>
 		</>
 	);
