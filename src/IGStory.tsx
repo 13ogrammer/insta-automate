@@ -34,7 +34,7 @@ export const IGStory: React.FC = () => {
 		<AbsoluteFill>
 			<Background />
 			<AbsoluteFill className="p-52">
-				<Header content="@13ography" />
+				<Header content="@13ogrammer" />
 				<div className="flex-1 flex flex-col items-center justify-center">
 					<Quote quote={quote.content} />
 					<Author name={quote.author} />
