@@ -6,6 +6,7 @@ import {Header} from './components/Header';
 import {Quote} from './components/Quote';
 import {Author} from './components/Author';
 import {Footer} from './components/Footer';
+import {Curtain} from './components/Curtain';
 
 import type {QuoteType} from './types';
 
@@ -38,8 +39,14 @@ export const IGStory: React.FC = () => {
 					<Quote quote={quote.content} />
 					<Author name={quote.author} />
 				</div>
-				<Footer content="quotes by quotable.io" />
+				<Footer>
+					<div className="grid grid-cols-1 gap-4">
+						<p className="font-semibold">Video built using Remotion</p>
+						<p>Source: quotable.io</p>
+					</div>
+				</Footer>
 			</AbsoluteFill>
+			<Curtain />
 		</AbsoluteFill>
 	);
 };

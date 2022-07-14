@@ -1,4 +1,4 @@
-import {interpolate, spring, useCurrentFrame, useVideoConfig} from 'remotion';
+import {spring, useCurrentFrame, useVideoConfig} from 'remotion';
 
 type QuoteProps = {
 	quote: string;
@@ -6,14 +6,7 @@ type QuoteProps = {
 
 export const Quote: React.FC<QuoteProps> = ({quote}) => {
 	const frame = useCurrentFrame();
-	const {fps, durationInFrames} = useVideoConfig();
-
-	const opacity = interpolate(
-		frame,
-		[50, durationInFrames - 60, durationInFrames],
-		[1, 1, 0],
-		{extrapolateRight: 'clamp'}
-	);
+	const {fps} = useVideoConfig();
 
 	const scale = spring({
 		frame: frame - 50,
@@ -26,10 +19,12 @@ export const Quote: React.FC<QuoteProps> = ({quote}) => {
 		durationInFrames: 40,
 	});
 
+	const fontSize = quote.length > 100 ? 'text-6xl' : 'text-8xl';
+
 	return (
 		<div
-			className="font-semibold text-center text-8xl leading-tight text-cyan-700 py-4"
-			style={{transform: `scale(${scale})`, opacity}}
+			className={`font-semibold text-center ${fontSize} leading-tight text-cyan-700 py-4`}
+			style={{transform: `scale(${scale})`}}
 		>
 			{quote}
 		</div>

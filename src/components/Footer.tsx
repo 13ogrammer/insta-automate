@@ -1,10 +1,11 @@
 import {interpolate, useCurrentFrame} from 'remotion';
 
 type FooterProps = {
-	content: string;
+	content?: string;
+	children?: React.ReactNode;
 };
 
-export const Footer: React.FC<FooterProps> = ({content}) => {
+export const Footer: React.FC<FooterProps> = ({content, children}) => {
 	const frame = useCurrentFrame();
 
 	const opacity = interpolate(frame, [100, 200], [0, 1], {
@@ -13,7 +14,7 @@ export const Footer: React.FC<FooterProps> = ({content}) => {
 
 	return (
 		<div className="text-4xl text-slate-500" style={{opacity}}>
-			{content}
+			{content || children}
 		</div>
 	);
 };
