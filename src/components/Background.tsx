@@ -1,8 +1,8 @@
 import {AbsoluteFill, random} from 'remotion';
 
 const backgrounds = [
-	'from-orange-100 via-red-700 to-yellow-600',
 	'from-emerald-100 to-amber-400',
+	// 'from-orange-100 via-red-700 to-yellow-600',
 	'from-emerald-600 to-amber-500',
 ];
 
